@@ -18,6 +18,11 @@ const router = createRouter({
       path: '/test/:id',
       name: 'test-detail',
       component: () => import('../views/TestDetailView.vue'),
+    },
+    {
+      path: '/fs',
+      name: 'fbview',
+      component: () => import('../views/FSView.vue'),
     }
   ],
 })
