@@ -23,6 +23,11 @@ const router = createRouter({
       path: '/fs',
       name: 'fbview',
       component: () => import('../views/FSView.vue'),
+    },
+    {
+      path: '/login',
+      name: 'Logging',
+      component: () => import('../views/Logging.vue'),
     }
   ],
 })

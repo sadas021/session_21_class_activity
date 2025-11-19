@@ -1,5 +1,7 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
+import { useCurrentUser } from 'vuefire'
+const user = useCurrentUser()
 </script>
 
 <template>
@@ -7,8 +9,14 @@ import { RouterLink, RouterView } from 'vue-router'
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/testing">Testing</RouterLink>
-        <RouterLink to="/test/123">Test</RouterLink>
+        <RouterLink to="/test/testdoc1">Test</RouterLink>
         <RouterLink to="/fs">Flash Cards</RouterLink>
+        <div v-if="!user">
+        <RouterLink to="/login">Login</RouterLink>
+        </div>
+        <div v-if="user">
+        <RouterLink to="/login">LogOut</RouterLink>
+        </div>
       </nav>
     </div>
   <RouterView />
